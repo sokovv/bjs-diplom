@@ -25,7 +25,7 @@ moneyManager1.addMoneyCallback = (data) => ApiConnector.addMoney(data, response 
         ProfileWidget.showProfile(response.data);
         moneyManager1.setMessage(true, 'Пополнение успешно');
     } else {
-        moneyManager1.setMessage(false, 'Ошибка пополнения');
+        moneyManager1.setMessage(false, response.error);
     }
 
 })
@@ -35,7 +35,7 @@ moneyManager1.conversionMoneyCallback = (data) => ApiConnector.convertMoney(data
         ProfileWidget.showProfile(response.data);
         moneyManager1.setMessage(true, 'Конвертация прошла успешно');
     } else {
-        moneyManager1.setMessage(false, 'Ошибка конвертации');
+        moneyManager1.setMessage(false, response.error);
     }
 
 })
@@ -45,7 +45,7 @@ moneyManager1.sendMoneyCallback = (data) => ApiConnector.transferMoney(data, res
         ProfileWidget.showProfile(response.data);
         moneyManager1.setMessage(true, 'Деньги успешно переведены');
     } else {
-        moneyManager1.setMessage(false, 'Ошибка перевода');
+        moneyManager1.setMessage(false, response.error);
     }
 })
 
@@ -66,7 +66,7 @@ favoritesWidgetnew1.addUserCallback = (data) => ApiConnector.addUserToFavorites(
         moneyManager1.updateUsersList(response.data);
         favoritesWidgetnew1.setMessage(true, 'Добавление в адресную книгу успешно');
     } else {
-        favoritesWidgetnew1.setMessage(false, 'Ошибка добавления');
+        favoritesWidgetnew1.setMessage(false, response.error);
     }
 
 })
@@ -78,7 +78,7 @@ favoritesWidgetnew1.removeUserCallback = (data) => ApiConnector.removeUserFromFa
         moneyManager1.updateUsersList(response.data);
         favoritesWidgetnew1.setMessage(true, 'Удаление из адресной книги успешно');
     } else {
-        favoritesWidgetnew1.setMessage(false, 'Ошибка удаления');
+        favoritesWidgetnew1.setMessage(false, response.error);
     }
 
 })
